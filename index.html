@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Coffee Shop</h1>
+        <nav>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Tutti</button>
+                <button class="filter-btn" data-category="forti">Forti</button>
+                <button class="filter-btn" data-category="medi">Medi</button>
+                <button class="filter-btn" data-category="leggeri">Leggeri</button>
+                <button class="filter-btn" data-category="bio">Bio</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-container">
+            </section>
+
+        <section class="cart-container">
+            <h2>Il Tuo Carrello</h2>
+            <div class="cart-items">
+                <p class="empty-cart-message">Il carrello è vuoto.</p>
+            </div>
+            <div class="cart-total">
+                Totale: <span id="cart-total-amount">0.00</span> €
+            </div>
+            <button id="checkout-btn">Procedi al Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Coffee Shop. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* Stili Generali */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  #5C4033;
+    
+    color: #333;
+}
+
+header {
+    background-color: #5C4033; /* Marrone caffè scuro e profondo */
+    color: white;
+    padding: 20px 0 10px 0; /* Meno padding in basso per avvicinare la nav */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 2.5em; /* Rende il titolo più prominente */
+}
+
+/* Navbar e Filtri */
+nav {
+    background-color: #6F4E37; /* Una tonalità di marrone leggermente più chiara dell'header, per un effetto layer */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center; /* Centra i filtri */
+    flex-wrap: wrap; /* Permette il wrap su schermi piccoli */
+    gap: 10px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background-color: #A0522D; /* Marrone più caldo per i bottoni */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #8B4513; 
+}
+
+.back-to-shop-btn {
+    background-color: #A0522D;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-shop-btn:hover {
+    background-color: #8B4513;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Contenitore Prodotti */
+.products-container {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #FFFFFF; /* Bianco puro per le card, per farle spiccare */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card .product-image-placeholder { /* Nuovo elemento per il colore */
+    width: 100%;
+    height: 150px;
+    background-color: #D2B48C; /* Tonalità di marrone-crema per il placeholder */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    color: #6F4E37;
+    font-weight: bold;
+}
+
+
+.product-card h3 {
+    color: #6F4E37; /* Marrone per i titoli */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.9em;
+    color: #666;
+    flex-grow: 1;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    color: #A0522D; /* Colore più caldo per i prezzi */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-card button {
+    background-color: #A0522D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #6F4E37;
+}
+
+/* Carrello */
+.cart-container {
+    flex: 1.5;
+    min-width: 280px;
+    background-color: #FFFFFF; /* Bianco puro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.cart-container h2, .checkout-summary-container h2, .checkout-form-container h2 {
+    color: #6F4E37;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.cart-items {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item span {
+    flex: 1;
+}
+
+.cart-item .item-quantity {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.cart-item .item-price {
+    font-weight: bold;
+    color: #A0522D;
+}
+
+.cart-item .remove-item-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-item-btn:hover {
+    background-color: #c0392b;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #6F4E37;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+#checkout-btn, #place-order-btn {
+    background-color: #27ae60; /* Verde per il checkout */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover, #place-order-btn:hover {
+    background-color: #219d52;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #5C4033; /* Stesso marrone dell'header */
+    color: white;
+    margin-top: 30px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Stili per la pagina di Checkout */
+.checkout-main {
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout-summary-container, .checkout-form-container {
+    background-color: #FFFFFF; /* Bianco puro */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.checkout-form-container h3 {
+    color: #6F4E37;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Media Queries per il Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .products-container, .cart-container {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+        position: static;
+    }
+
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    nav .filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex-grow: 1;
+        min-width: 100px;
+    }
+
+    .checkout-main {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}
